@@ -30,16 +30,12 @@ poetry install
 - Modify `src/my_project/crew.py` to add your own logic, tools and specific args
 - Modify `src/my_project/main.py` to add custom inputs for your agents and tasks
 
-## Running the Project
+## Running the Project using Terminal
 
 To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
 
-```bash
-$ crewai run
 ```
-or
-```bash
-poetry run my_project
+PYTHONPATH=./src python -m my_project.main
 ```
 
 This command initializes the my_project Crew, assembling the agents and assigning them tasks as defined in your configuration.
@@ -49,6 +45,7 @@ This example, unmodified, will run the create a `report.md` file with the output
 ## Understanding Your Crew
 
 The my_project Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+
 
 ## Support
 
