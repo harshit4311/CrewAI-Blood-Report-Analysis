@@ -1,0 +1,26 @@
+analyze_blood_test:
+  description: >
+    Analyze the blood test report to extract relevant health information.
+  expected_output: >
+    Summary of the blood test report.
+  agent: researcher
+  context:
+    - researcher
+
+search_health_articles:
+  description: >
+    Search for health-related articles based on the provided summary.
+  expected_output: >
+    List of relevant articles.
+  agent: researcher
+  context:
+    - researcher
+
+provide_health_recommendations:
+  description: >
+    Provide health recommendations based on the retrieved articles.
+  expected_output: >
+    Health recommendations.
+  agent: researcher
+  context:
+    - researcher
