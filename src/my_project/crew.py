@@ -1,5 +1,3 @@
-# src/my_project/crew.py
-
 import yaml
 import os
 import requests
@@ -20,9 +18,8 @@ def load_yaml(filename):
 agents = load_yaml('agents.yaml')
 tasks = load_yaml('tasks.yaml')
 
-# Get the API key from environment variables
-API_KEY = os.getenv('GOOGLE_SERPER_API_KEY')
-SEARCH_URL = 'https://api.serper.dev/v1/search'
+API_KEY = os.getenv('SERPER_API_KEY')
+SEARCH_URL = 'https://google.serper.dev/search'  # Search the internet 
 
 class Crew:
     def run_task(self, task_name, **kwargs):
@@ -44,7 +41,6 @@ class Crew:
         return "Summary of blood test report"
 
     def format_report(self, report):
-        # Sample data extracted from the report (you should parse the actual data)
         data = [
             ["Test Name", "Results", "Units", "Bio. Ref. Interval"],
             ["Hemoglobin", "15.00", "g/dL", "13.00 - 17.00"],
@@ -60,16 +56,17 @@ class Crew:
     def search_health_articles(self, summary):
         print(f"Searching articles based on: {summary[:100]}...")  # Print first 100 characters for brevity
         headers = {
-            'Authorization': f'Bearer {API_KEY}'
+            'X-API-KEY': API_KEY,  # Corrected header key
+            'Content-Type': 'application/json'
         }
-        params = {
-            'q': summary,
-            'num': 5  # Number of results to return
+        json_data = {
+            'q': summary,  # Query parameter
+            'num': 10  # No.of results
         }
-        response = requests.get(SEARCH_URL, headers=headers, params=params)
+        response = requests.post(SEARCH_URL, headers=headers, json=json_data)
         if response.status_code == 200:
             data = response.json()
-            articles = [item.get('link') for item in data.get('results', [])]
+            articles = [item.get('link') for item in data.get('organic', [])] 
             return articles
         else:
             print("Error fetching articles:", response.status_code, response.text)
@@ -77,6 +74,23 @@ class Crew:
 
     def provide_health_recommendations(self, articles):
         print(f"Providing recommendations based on: {articles}")
-        return "Recommendations based on articles"
+        
+        if articles:
+            recommendations = [
+                f"Check out these articles for more information on blood test results:\n"
+                + "\n".join([f"- {article}" for article in articles])
+            ]
+        else:
+            # General health advice if no specific articles are found
+            recommendations = [
+                "Here are some general health recommendations:",
+                "- Drink plenty of water.",
+                "- Avoid alcohol and smoking.",
+                "- Ensure adequate vitamin D exposure.",
+                "- Maintain a balanced diet and exercise regularly."
+            ]
+        
+        # Join recommendations into a single string for output
+        return "\n".join(recommendations)
 
 crew = Crew()
