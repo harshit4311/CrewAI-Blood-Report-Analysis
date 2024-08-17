@@ -74,14 +74,14 @@ class Crew:
 
     def provide_health_recommendations(self, articles):
         print(f"Providing recommendations based on: {articles}")
-        
+
+        # Create recommendations based on whether articles are found
         if articles:
             recommendations = [
-                f"Check out these articles for more information on blood test results:\n"
-                + "\n".join([f"- {article}" for article in articles])
+                "Check out these articles for more information on blood test results:",
+                "\n".join([f"- {article}" for article in articles])
             ]
         else:
-            # General advice
             recommendations = [
                 "Here are some general health recommendations:",
                 "- Drink plenty of water.",
@@ -89,7 +89,17 @@ class Crew:
                 "- Ensure adequate vitamin D exposure.",
                 "- Maintain a balanced diet and exercise regularly."
             ]
+        
+        # Always include general recommendations
+        recommendations.append(
+            "\nAdditionally, here are some general health recommendations:"
+            "\n- Drink plenty of water."
+            "\n- Avoid alcohol and smoking."
+            "\n- Ensure adequate vitamin D exposure."
+            "\n- Maintain a balanced diet and exercise regularly."
+        )
             
         return "\n".join(recommendations)
+
 
 crew = Crew()
