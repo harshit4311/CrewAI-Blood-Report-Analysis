@@ -56,11 +56,11 @@ class Crew:
     def search_health_articles(self, summary):
         print(f"Searching articles based on: {summary[:100]}...")  # Print first 100 characters for brevity
         headers = {
-            'X-API-KEY': API_KEY,  # Corrected header key
+            'X-API-KEY': API_KEY,  
             'Content-Type': 'application/json'
         }
         json_data = {
-            'q': summary,  # Query parameter
+            'q': summary,  
             'num': 10  # No.of results
         }
         response = requests.post(SEARCH_URL, headers=headers, json=json_data)
@@ -81,7 +81,7 @@ class Crew:
                 + "\n".join([f"- {article}" for article in articles])
             ]
         else:
-            # General health advice if no specific articles are found
+            # General advice
             recommendations = [
                 "Here are some general health recommendations:",
                 "- Drink plenty of water.",
@@ -89,8 +89,7 @@ class Crew:
                 "- Ensure adequate vitamin D exposure.",
                 "- Maintain a balanced diet and exercise regularly."
             ]
-        
-        # Join recommendations into a single string for output
+            
         return "\n".join(recommendations)
 
 crew = Crew()
