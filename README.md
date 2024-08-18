@@ -250,7 +250,7 @@ For support, questions, or feedback regarding the MyProject Crew or CrewAI:
 - Join thier [Discord community](https://discord.com/invite/X4JWnZnxPb)
 - Read thier [blog](https://www.crewai.com/blog)
 
-## Example Output for the given Blood_Report_PDF
+## Example Output for the given BloodTest-Report.pdf
 
 Analyzing report:
 ```
