@@ -2,7 +2,7 @@
 
 import fitz  # PyMuPDF
 import os
-from my_project.crew import crew  # Use absolute import
+from my_project.crew import Crew  # Import the Crew class
 
 def extract_text_from_pdf(pdf_path):
     text = ""
@@ -13,18 +13,19 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 def main():
-    # Path to the PDF report
     pdf_path = '/Users/harshit/Programming/Web Development/my_project/BloodTest-Report.pdf'
 
-    # Extract text from the PDF report
+    # Extract text from PDF
     sample_report = extract_text_from_pdf(pdf_path)
 
-    # Run the tasks in sequence
+    # Create an instance of Crew
+    crew = Crew()
+
+    # Run all tasks that would be performed by agents
     summary = crew.run_task('analyze_blood_test', report=sample_report)
     articles = crew.run_task('search_health_articles', summary=summary)
-    recommendations = crew.run_task('provide_health_recommendations', articles=articles)
+    recommendations = crew.run_task('provide_health_recommendations', articles=articles, report=sample_report)
 
-    # Output the results
     print("Health Summary:", summary)
     print("Recommended Articles:", articles)
     print("Health Recommendations:", recommendations)
