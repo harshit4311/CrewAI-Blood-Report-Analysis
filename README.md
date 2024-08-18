@@ -252,11 +252,6 @@ For support, questions, or feedback regarding the MyProject Crew or CrewAI:
 
 ## Example Output for the given Blood_Report_PDF
 
-Searching articles based on: Hemoglobin is within the normal range.
-Packed Cell Volume (PCV) is within the normal range.
-RBC Count...
-
-Providing recommendations based on: ['https://www.ncbi.nlm.nih.gov/books/NBK260/', 'https://www.ncbi.nlm.nih.gov/books/NBK545275/', 'https://emedicine.medscape.com/article/2054497-overview', 'https://my.clevelandclinic.org/health/diagnostics/24641-mcv-blood-test', 'https://medlineplus.gov/lab-tests/red-blood-cell-rbc-indices/', 'https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/mean-corpuscular-hemoglobin-concentration', 'https://www.verywellhealth.com/mean-corpuscular-hemoglobin-concentration-797200', 'https://www.testing.com/tests/mch-test/', 'https://www.sciencedirect.com/topics/medicine-and-dentistry/mean-corpuscular-hemoglobin', 'https://www.medicalnewstoday.com/articles/mcv-levels']
 Analyzing report:
 ```
 +-----------------------------------+-----------+----------+----------------------+
@@ -277,13 +272,27 @@ Analyzing report:
 | Red Cell Distribution Width (RDW) |      14   | %        | 11.60 - 14.00        |
 +-----------------------------------+-----------+----------+----------------------+
 ```
-Health Summary: Hemoglobin is within the normal range.
+
+Searching articles based on: Hemoglobin is within the normal range.
 Packed Cell Volume (PCV) is within the normal range.
-RBC Count is within the normal range.
-MCV is within the normal range.
-MCH is within the normal range.
-MCHC is within the normal range.
-Red Cell Distribution Width (RDW) is within the normal range.
+RBC Count...
+
+Providing recommendations based on: ['https://www.ncbi.nlm.nih.gov/books/NBK260/', 'https://www.ncbi.nlm.nih.gov/books/NBK545275/', 'https://emedicine.medscape.com/article/2054497-overview', 'https://my.clevelandclinic.org/health/diagnostics/24641-mcv-blood-test', 'https://medlineplus.gov/lab-tests/red-blood-cell-rbc-indices/', 'https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/mean-corpuscular-hemoglobin-concentration', 'https://www.verywellhealth.com/mean-corpuscular-hemoglobin-concentration-797200', 'https://www.testing.com/tests/mch-test/', 'https://www.sciencedirect.com/topics/medicine-and-dentistry/mean-corpuscular-hemoglobin', 'https://www.medicalnewstoday.com/articles/mcv-levels']
+
+Health Summary: 
+- Hemoglobin is within the normal range.
+
+- Packed Cell Volume (PCV) is within the normal range.
+
+- RBC Count is within the normal range.
+
+- MCV is within the normal range.
+
+- MCH is within the normal range.
+
+- MCHC is within the normal range.
+
+- Red Cell Distribution Width (RDW) is within the normal range.
 
 Recommended Articles: ['https://www.ncbi.nlm.nih.gov/books/NBK260/', 'https://www.ncbi.nlm.nih.gov/books/NBK545275/', 'https://emedicine.medscape.com/article/2054497-overview', 'https://my.clevelandclinic.org/health/diagnostics/24641-mcv-blood-test', 'https://medlineplus.gov/lab-tests/red-blood-cell-rbc-indices/', 'https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/mean-corpuscular-hemoglobin-concentration', 'https://www.verywellhealth.com/mean-corpuscular-hemoglobin-concentration-797200', 'https://www.testing.com/tests/mch-test/', 'https://www.sciencedirect.com/topics/medicine-and-dentistry/mean-corpuscular-hemoglobin', 'https://www.medicalnewstoday.com/articles/mcv-levels']
 
