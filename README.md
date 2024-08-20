@@ -27,14 +27,14 @@ CrewAI uses a structured approach where agents are defined with specific roles a
 In this project, we used AI agents to analyze blood test reports, search for health-related articles, and provide health recommendations. The key agents and their tasks are:
 
 - **Health Report Analyzer:** This agent reads and analyzes the blood test report, summarizing the findings in an easy-to-understand manner.
-- **Article Researcher:** This agent searches the web for articles tailored to the person's health needs based on the blood test results. We used the Google Serper Search API for this, but Gemini API or OpenAI API could have been used as alternatives.
+- **Article Researcher:** This agent searches the web for articles tailored to the person's health needs based on the blood test results. We used the **Google Serper Search API** for this, but Gemini API or OpenAI API could have been used as alternatives.
 - **Health Advisor:** Based on the analysis and articles found, this agent provides health recommendations and links to relevant resources.
 
 ### End-to-End Process in Detail: What Runs Behind the Code
 
 1. **Input:** The system takes a sample blood test report.
 2. **Analysis:** The Health Report Analyzer agent examines the report, highlighting key results and any deviations from the normal range.
-3. **Research:** The Article Researcher agent searches the web for relevant health articles using the Google Serper Search API.
+3. **Research:** The Article Researcher agent searches the web for relevant health articles using the `Google Serper Search API`.
 4. **Recommendations:** The Health Advisor agent provides personalized health recommendations based on the blood test analysis and the articles found.
 
 ## Installation
